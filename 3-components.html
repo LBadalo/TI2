@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TI2 - Class 1 - React Components</title>
+
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+  </head>
+
+  <body>
+    <div id="app">Se me consegues ver, algo está mal :)</div>
+
+    <!--
+      TODO: Cria uma tag script aqui, e com JavaScript e React, adiciona dois elementos "p"
+      ao div criado acima.
+
+      - O primeiro deve ter o texto "Olá, TI2"
+      - O segundo deve ter o texto "Olá, React"
+
+      Vê os exemplos no README.
+    -->
+    <script>
+      function Ola(props){
+
+        return React.createElement("p", null, "Olá, " + props.nome);
+      }
+      let olaTi2 = React.createElement(Ola, {nome: "TI2"});
+      let olaReact = React.createElement(Ola, {nome: "React"});
+
+      let exemplo = React.createElement("div", null, olaTi2, olaReact);
+
+      ReactDOM.render(exemplo, document.getElementById("app"));
+    </script>
+  </body>
+</html>

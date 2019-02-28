@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TI2 - Class 1 - Relembrar o DOM</title>
+  </head>
+  <body>
+    <!-- TODO: Cria um div vazio, e dá-lhe o ID "app" -->
+    <div id="app"></div>
+    <!--
+      TODO: Cria uma tag script aqui, e com JavaScript, adiciona um parágrafo
+      dentro do div criado acima. o parágrafo deve ter o texto "Olá, mundo!"
+    -->
+    <script>
+      let app = document.querySelector('#app');
+      
+      console.time("innerHTML");
+      //Sem ser em HTML
+      for(let i = 0; i<1000; i++){
+        let x = document.createElement('p');
+        x.textContent = i;
+        x.style.color = "blue";
+        x.style.fontFamily = "Arial";
+
+        app.appendChild(x);
+     } 
+      
+      //Com HTML
+     /* for(let i = 0; i<1000; i++){
+        app.insertAdjacentHTML("beforeend", "<p>" + i + "</p>");
+
+      }
+      */
+      console.timeEnd("innerHTML");
+    
+    </script>
+  </body>
+</html>
